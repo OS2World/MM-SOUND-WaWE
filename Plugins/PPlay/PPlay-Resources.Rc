@@ -1,0 +1,144 @@
+
+/* OS/2 Warp 4.0 Resource Script File - Created by Universal Resource Editor */
+
+#define INCL_WINSYS
+#define INCL_WINBIDI
+#define INCL_WINSTDDLGS
+#define INCL_WINSTDSPIN
+#define INCL_NLS
+#define INCL_SW
+
+#include <os2.h>
+
+#include "pplay-resources.h"
+
+DLGTEMPLATE DLG_SETUPWINDOW 850 MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG "Configuration of Playback plugin", DLG_SETUPWINDOW, 178, 0, 190, 152,
+                FS_NOBYTEALIGN | FS_DLGBORDER | WS_CLIPSIBLINGS | WS_SAVEBITS,
+                FCF_TITLEBAR | FCF_SYSMENU | FCF_CLOSEBUTTON | FCF_AUTOICON
+    PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+    PRESPARAMS PP_USER, "10.System Proportional"
+    BEGIN
+        CONTROL "~Default",            PB_DEFAULT, 48, 3, 32, 11, WC_BUTTON,
+                                            BS_PUSHBUTTON | WS_TABSTOP |
+                                            WS_VISIBLE
+                PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        CONTROL "~Help",               PB_HELP, 125, 3, 32, 11, WC_BUTTON,
+                                            BS_PUSHBUTTON | WS_TABSTOP |
+                                            WS_VISIBLE
+                PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        CONTROL "",                    NBK_SETUPNOTEBOOK, 3, 17, 184, 128,
+                                            WC_NOTEBOOK, BKS_BACKPAGESTR |
+                                            BKS_MAJORTABTOP | BKS_TABBEDDIALOG |
+                                            WS_TABSTOP | WS_VISIBLE
+                PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+    END
+END
+
+DLGTEMPLATE DLG_GENERALCONFIGDIALOG 850 MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG "General Configuration Dialog", DLG_GENERALCONFIGDIALOG, 134, 43, 179, 87,
+                FS_NOBYTEALIGN | NOT FS_DLGBORDER | WS_CLIPSIBLINGS |
+                WS_SAVEBITS | WS_VISIBLE
+    PRESPARAMS PP_FOREGROUNDCOLORINDEX, CLR_BLACK
+    PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+    PRESPARAMS PP_USER, "10.System Proportional"
+    BEGIN
+        CONTROL "Sound driver interface", GB_SOUNDDRIVER, 5, 66, 170, 18,
+                                            WC_STATIC, SS_GROUPBOX | WS_GROUP |
+                                            WS_VISIBLE
+        CONTROL "Sound driver to use:", ST_SOUNDDRIVERTOUSE, 8, 71, -1, -1,
+                                            WC_STATIC, SS_TEXT | SS_AUTOSIZE |
+                                            DT_LEFT | DT_VCENTER | WS_VISIBLE
+        CONTROL "",                    CX_SOUNDDRIVER, 72, 43, 99, 34,
+                                            WC_COMBOBOX, CBS_DROPDOWNLIST |
+                                            ES_ANY | LS_HORZSCROLL | WS_TABSTOP |
+                                            WS_VISIBLE
+        CONTROL "Default output format", GB_DEFAULTOUTPUTFORMAT, 5, 18, 170, 46,
+                                            WC_STATIC, SS_GROUPBOX | WS_GROUP |
+                                            WS_VISIBLE
+        CONTROL "Always ~use the default output format",
+                                       CB_ALWAYSUSETHEDEFAULTOUTPUTFORMAT,
+                                        8, 50, -1, -1, WC_BUTTON,
+                                            BS_AUTOCHECKBOX | BS_AUTOSIZE |
+                                            WS_TABSTOP | WS_VISIBLE
+        CONTROL "Frequency:",          ST_FREQUENCY, 8, 41, -1, -1, WC_STATIC,
+                                            SS_TEXT | SS_AUTOSIZE | DT_LEFT |
+                                            DT_VCENTER | WS_VISIBLE
+        CONTROL "",                    EF_FREQUENCY, 47, 41, 36, 6,
+                                            WC_ENTRYFIELD, ES_AUTOSCROLL |
+                                            ES_CENTER | ES_MARGIN | ES_AUTOTAB |
+                                            ES_ANY | WS_TABSTOP | WS_VISIBLE
+                CTLDATA 8, 32, 0, 0
+        CONTROL "Hz",                  ST_HZ, 88, 41, -1, -1, WC_STATIC,
+                                            SS_TEXT | SS_AUTOSIZE | DT_LEFT |
+                                            DT_VCENTER | WS_VISIBLE
+        CONTROL "Bits:",               ST_BITS, 8, 32, -1, -1, WC_STATIC,
+                                            SS_TEXT | SS_AUTOSIZE | DT_LEFT |
+                                            DT_TOP | WS_VISIBLE
+        CONTROL "",                    CX_BITS, 46, 10, 77, 28, WC_COMBOBOX,
+                                            CBS_DROPDOWNLIST | ES_ANY |
+                                            WS_VISIBLE
+        CONTROL "Channels:",           ST_CHANNELS, 8, 23, -1, -1, WC_STATIC,
+                                            SS_TEXT | SS_AUTOSIZE | DT_LEFT |
+                                            DT_TOP | WS_VISIBLE
+        CONTROL "",                    CX_CHANNELS, 46, 1, 77, 28, WC_COMBOBOX,
+                                            CBS_DROPDOWNLIST | ES_ANY |
+                                            WS_VISIBLE
+        CONTROL "General settings",    GB_GENERALSETTINGS, 5, 1, 170, 16,
+                                            WC_STATIC, SS_GROUPBOX | WS_GROUP |
+                                            WS_VISIBLE
+        CONTROL "~Slow machine mode",  CB_SLOWMACHINEMODE, 8, 3, -1, -1,
+                                            WC_BUTTON, BS_AUTOCHECKBOX |
+                                            BS_AUTOSIZE | WS_TABSTOP |
+                                            WS_VISIBLE
+    END
+END
+
+DLGTEMPLATE DLG_DARTCONFIGDIALOG 850 MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG "DART Configuration Dialog", DLG_DARTCONFIGDIALOG, 134, 43, 179, 87,
+                FS_NOBYTEALIGN | NOT FS_DLGBORDER | WS_CLIPSIBLINGS |
+                WS_SAVEBITS | WS_VISIBLE
+    PRESPARAMS PP_FOREGROUNDCOLORINDEX, CLR_BLACK
+    PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+    PRESPARAMS PP_USER, "10.System Proportional"
+    BEGIN
+        CONTROL "Sound device",        GB_SOUNDDEVICE, 5, 45, 170, 35,
+                                            WC_STATIC, SS_GROUPBOX | WS_GROUP |
+                                            WS_VISIBLE
+        CONTROL "Sound device to use:", ST_SOUNDDEVICETOUSE, 8, 63, -1, -1,
+                                            WC_STATIC, SS_TEXT | SS_AUTOSIZE |
+                                            DT_LEFT | DT_VCENTER | WS_GROUP |
+                                            WS_VISIBLE
+        CONTROL "",                    CX_SOUNDDRIVER, 72, 36, 99, 34,
+                                            WC_COMBOBOX, CBS_DROPDOWNLIST |
+                                            ES_ANY | LS_HORZSCROLL | WS_GROUP |
+                                            WS_TABSTOP | WS_VISIBLE
+        CONTROL "Audio buffers",       GB_AUDIOBUFFERS, 5, 6, 170, 36,
+                                            WC_STATIC, SS_GROUPBOX | WS_GROUP |
+                                            WS_VISIBLE
+        CONTROL "Number of buffers:",  ST_NUMOFBUFS, 8, 26, -1, -1, WC_STATIC,
+                                            SS_TEXT | SS_AUTOSIZE | DT_LEFT |
+                                            DT_VCENTER | WS_GROUP | WS_VISIBLE
+        CONTROL "",                    EF_NUMOFBUFS, 95, 27, 41, 6,
+                                            WC_ENTRYFIELD, ES_AUTOSCROLL |
+                                            ES_RIGHT | ES_MARGIN | ES_AUTOTAB |
+                                            ES_ANY | WS_TABSTOP | WS_VISIBLE
+                CTLDATA 8, 32, 0, 0
+        CONTROL "Use device ~shared",  CB_USEDEVICESHARED, 9, 50, -1, -1,
+                                            WC_BUTTON, BS_AUTOCHECKBOX |
+                                            BS_AUTOSIZE | WS_TABSTOP |
+                                            WS_VISIBLE
+        CONTROL "Size of a buffer:",   ST_SIZEOFABUFFER, 8, 13, -1, -1,
+                                            WC_STATIC, SS_TEXT | SS_AUTOSIZE |
+                                            DT_LEFT | DT_TOP | WS_GROUP |
+                                            WS_VISIBLE
+        CONTROL "",                    EF_SIZEOFBUF, 95, 15, 41, 7,
+                                            WC_ENTRYFIELD, ES_AUTOSCROLL |
+                                            ES_RIGHT | ES_MARGIN | ES_AUTOTAB |
+                                            ES_ANY | WS_TABSTOP | WS_VISIBLE
+                CTLDATA 8, 32, 0, 0
+    END
+END

@@ -1,0 +1,55 @@
+
+Changing samplerate:
+--------------------
+
+The idea is the following:
+
+Every channel contains X samples, at Y samplerate, which
+means, that there should be Y samples sent out to the speaker in one second.
+
+Showing it in an amplitude/time scale, it looks like this:
+
+
+|              ***
+|*            *   *
+| *
+|       **   *
+|  *   *  ***
+|   ***
++-------------------->
+       Figure 1.
+
+
+Changing its samplerate means resampling, to hear almost the same if the
+result is played back at Z samplerate.
+
+
+How to do resampling?
+---------------------
+
+Let's say you have a series of samples as it's in Figure 1., and
+that thing is sampled at Y samples per second, and you want to change its
+samplerate to Z samples per second!
+
+Let's imagine the current state as if the distance betwen the original samples
+(the columns in Figure 1.) would be Z "units", so as much units as the new
+samplerate is. Connect the samples with a line in your imagination.
+
+(Now you should have an image in your mind, in which there is a figure similar
+to Figure 1., but the '*'s are stretched horizontally, and connected with a 
+line.)
+
+Now, resampling it to Z means that you'll have to start from the very first 
+sample, and step Y (!) units every time, and get the sample what you have 
+there.
+
+It will usually mean that you'll have to take two original samples, and 
+calculate a third sample from those two, weighted, so that if it's closer to
+the first sample, then it will be almost that sample, if it's closer to the
+second sample, it will be almost the second sample (linear interpolation).
+
+
+
+Easy, right? :)
+
+Doodle  <doodle@dont.spam.please.scenergy.dfmk.hu>

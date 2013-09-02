@@ -1,0 +1,224 @@
+
+/* OS/2 Warp 4.0 Resource Script File - Created by Universal Resource Editor */
+
+#define INCL_WINSYS
+#define INCL_WINBIDI
+#define INCL_WINSTDDLGS
+#define INCL_WINSTDSPIN
+#define INCL_NLS
+#define INCL_SW
+
+#include <os2.h>
+
+#include "\watcom\projects\wawe\plugins\mpa\xmpa-resources.h"
+
+DLGTEMPLATE DLG_MP3ENCODERSETTINGS MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG "MP3 Encoder Settings", DLG_MP3ENCODERSETTINGS, 10, 28, 295, 136,
+                FS_NOBYTEALIGN | FS_DLGBORDER | WS_CLIPSIBLINGS | WS_SAVEBITS,
+                FCF_TITLEBAR | FCF_SYSMENU | FCF_CLOSEBUTTON | FCF_TASKLIST
+    PRESPARAMS PP_FOREGROUNDCOLORINDEX, CLR_BLACK
+    PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+    PRESPARAMS PP_USER, "10.System Proportional"
+    BEGIN
+        CONTROL "Encoding mode",       GB_ENCODINGMODE, 2, 81, 81, 43,
+                                            WC_STATIC, SS_GROUPBOX | WS_GROUP |
+                                            WS_VISIBLE
+        CONTROL "Encoding mode:",      ST_ENCODINGMODE, 6, 113, -1, -1,
+                                            WC_STATIC, SS_TEXT | SS_AUTOSIZE |
+                                            DT_LEFT | DT_VCENTER | WS_VISIBLE
+        CONTROL "Encoding mode",       CX_ENCODINGMODE, 49, 89, 31, 30,
+                                            WC_COMBOBOX, CBS_DROPDOWNLIST |
+                                            ES_ANY | WS_VISIBLE
+        CONTROL "Encoding Mode Help",  MLE_ENCODINGMODEHELP, 5, 86, 74, 24,
+                                            WC_MLE, MLS_BORDER | MLS_IGNORETAB |
+                                            MLS_READONLY | MLS_VSCROLL |
+                                            MLS_WORDWRAP | WS_TABSTOP |
+                                            WS_VISIBLE
+                CTLDATA 32, 0, 65535, 65535, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        CONTROL "General settings",    GB_GENERALSETTINGS, 3, 50, 81, 31,
+                                            WC_STATIC, SS_GROUPBOX | WS_GROUP |
+                                            WS_VISIBLE
+        CONTROL "Stereo mode:",        ST_STEREOMODE, 5, 68, -1, -1, WC_STATIC,
+                                            SS_TEXT | SS_AUTOSIZE | DT_LEFT |
+                                            DT_TOP | WS_VISIBLE
+        CONTROL "Stereo mode",         CX_STEREOMODE, 43, 42, 37, 32,
+                                            WC_COMBOBOX, CBS_DROPDOWNLIST |
+                                            ES_ANY | LS_HORZSCROLL | WS_VISIBLE
+        CONTROL "Algorithm quality:",  ST_ALGORITHMQUALITY, 5, 58, -1, -1,
+                                            WC_STATIC, SS_TEXT | SS_AUTOSIZE |
+                                            DT_LEFT | DT_TOP | WS_VISIBLE
+        CONTROL "Algorithm quality",   CX_ALGORITHMQUALITY, 51, 36, 30, 28,
+                                            WC_COMBOBOX, CBS_DROPDOWNLIST |
+                                            ES_ANY | LS_HORZSCROLL | WS_VISIBLE
+        CONTROL "MPEG Frame settings", GB_MPEGFRAMESETTINGS, 4, 8, 76, 42,
+                                            WC_STATIC, SS_GROUPBOX | WS_GROUP |
+                                            WS_VISIBLE
+        CONTROL "E~rror protection (CRC)", CB_ERRORPROTECTION, 6, 36, -1, -1,
+                                            WC_BUTTON, BS_AUTOCHECKBOX |
+                                            BS_AUTOSIZE | WS_TABSTOP |
+                                            WS_VISIBLE
+        CONTROL "~Original",           CB_ORIGINAL, 5, 28, -1, -1, WC_BUTTON,
+                                            BS_AUTOCHECKBOX | BS_AUTOSIZE |
+                                            WS_TABSTOP | WS_VISIBLE
+        CONTROL "Cop~yright",          CB_COPYRIGHT, 5, 20, -1, -1, WC_BUTTON,
+                                            BS_AUTOCHECKBOX | BS_AUTOSIZE |
+                                            WS_TABSTOP | WS_VISIBLE
+        CONTROL "~Private extension",  CB_PRIVATEEXTENSION, 6, 12, -1, -1,
+                                            WC_BUTTON, BS_AUTOCHECKBOX |
+                                            BS_AUTOSIZE | WS_TABSTOP |
+                                            WS_VISIBLE
+        CONTROL "Settings for CBR encoding", GB_SETTINGSFORCBRENCODING,
+                                        85, 116, 98, 16, WC_STATIC, SS_GROUPBOX |
+                                            WS_GROUP | WS_VISIBLE
+        CONTROL "Bitrate:",            ST_CBRBITRATE, 89, 120, -1, -1,
+                                            WC_STATIC, SS_TEXT | SS_AUTOSIZE |
+                                            DT_LEFT | DT_VCENTER | WS_VISIBLE
+        CONTROL "CBR Bitrate",         CX_CBRBITRATE, 109, 96, 35, 32,
+                                            WC_COMBOBOX, CBS_DROPDOWN | ES_ANY |
+                                            WS_VISIBLE
+        CONTROL "kbps",                ST_CBRKBPS, 149, 120, -1, -1, WC_STATIC,
+                                            SS_TEXT | SS_AUTOSIZE | DT_LEFT |
+                                            DT_VCENTER | WS_VISIBLE
+        CONTROL "Settings for ABR encoding", GB_SETTINGSFORABRENCODING,
+                                        85, 43, 98, 71, WC_STATIC, SS_GROUPBOX |
+                                            WS_GROUP | WS_VISIBLE
+        CONTROL "Average bitrate:",    ST_AVERAGEBITRATE, 92, 100, -1, -1,
+                                            WC_STATIC, SS_TEXT | SS_AUTOSIZE |
+                                            DT_LEFT | DT_VCENTER | WS_VISIBLE
+        CONTROL "ABR AVG bitrate",     CX_ABRAVGBITRATE, 131, 80, 36, 24,
+                                            WC_COMBOBOX, CBS_DROPDOWN | ES_ANY |
+                                            WS_VISIBLE
+        CONTROL "kbps",                ST_ABRAVGKBPS, 168, 99, -1, -1,
+                                            WC_STATIC, SS_TEXT | SS_AUTOSIZE |
+                                            DT_LEFT | DT_TOP | WS_VISIBLE
+        CONTROL "Limit m~in. bitrate", CB_ABRLIMITMINBITRATE, 89, 82, -1, -1,
+                                            WC_BUTTON, BS_AUTOCHECKBOX |
+                                            BS_AUTOSIZE | WS_TABSTOP |
+                                            WS_VISIBLE
+        CONTROL "Min. bitrate:",       ST_ABRMINBITRATE, 89, 74, -1, -1,
+                                            WC_STATIC, SS_TEXT | SS_AUTOSIZE |
+                                            DT_LEFT | DT_VCENTER | WS_VISIBLE
+        CONTROL "ABR MIN bitrate",     CX_ABRMINBITRATE, 130, 53, 34, 27,
+                                            WC_COMBOBOX, CBS_DROPDOWN | ES_ANY |
+                                            WS_VISIBLE
+        CONTROL "kbps",                ST_ABRMINKBPS, 165, 74, -1, -1,
+                                            WC_STATIC, SS_TEXT | SS_AUTOSIZE |
+                                            DT_LEFT | DT_TOP | WS_VISIBLE
+        CONTROL "~Force min. bitrate at silence", CB_FORCEMINBITRATEATSILENCE,
+                                        89, 66, -1, -1, WC_BUTTON,
+                                            BS_AUTOCHECKBOX | BS_AUTOSIZE |
+                                            WS_TABSTOP | WS_VISIBLE
+        CONTROL "Limit m~ax. bitrate", CB_ABRLIMITMAXBITRATE, 89, 55, -1, -1,
+                                            WC_BUTTON, BS_AUTOCHECKBOX |
+                                            BS_AUTOSIZE | WS_TABSTOP |
+                                            WS_VISIBLE
+        CONTROL "Max. bitrate:",       ST_ABRMAXBITRATE, 88, 45, -1, -1,
+                                            WC_STATIC, SS_TEXT | SS_AUTOSIZE |
+                                            DT_LEFT | DT_VCENTER | WS_VISIBLE
+        CONTROL "ABR MAX bitrate",     CX_ABRMAXBITRATE, 128, 27, 33, 26,
+                                            WC_COMBOBOX, CBS_DROPDOWN | ES_ANY |
+                                            WS_VISIBLE
+        CONTROL "kbps",                ST_ABRMAXKBPS, 165, 47, -1, -1,
+                                            WC_STATIC, SS_TEXT | SS_AUTOSIZE |
+                                            DT_LEFT | DT_TOP | WS_VISIBLE
+        CONTROL "Write XIN~G VBR header frame", CB_ABRWRITEXINGVBRHEADERFRAME,
+                                        89, 90, -1, -1, WC_BUTTON,
+                                            BS_AUTOCHECKBOX | BS_AUTOSIZE |
+                                            WS_TABSTOP | WS_VISIBLE
+        CONTROL "Settings for VBR encoding", GB_SETTINGSFORVBRENCODING,
+                                        85, 8, 98, 34, WC_STATIC, SS_GROUPBOX |
+                                            WS_GROUP | WS_VISIBLE
+        CONTROL "VBR quality:",        ST_VBRQUALITY, 89, 29, -1, -1, WC_STATIC,
+                                            SS_TEXT | SS_AUTOSIZE | DT_LEFT |
+                                            DT_TOP | WS_VISIBLE
+        CONTROL "VBR quality",         CX_VBRQUALITY, 124, -2, 53, 37,
+                                            WC_COMBOBOX, CBS_DROPDOWNLIST |
+                                            ES_ANY | WS_VISIBLE
+        CONTROL "VBR mode:",           ST_VBRMODE, 89, 20, -1, -1, WC_STATIC,
+                                            SS_TEXT | SS_AUTOSIZE | DT_LEFT |
+                                            DT_TOP | WS_VISIBLE
+        CONTROL "VBR mode",            CX_VBRMODE, 124, -7, 52, 32, WC_COMBOBOX,
+                                            CBS_DROPDOWNLIST | ES_ANY |
+                                            WS_VISIBLE
+        CONTROL "Write ~XING VBR header frame", CB_VBRWRITEXINGVBRHEADERFRAME,
+                                        88, 12, -1, -1, WC_BUTTON,
+                                            BS_AUTOCHECKBOX | BS_AUTOSIZE |
+                                            WS_TABSTOP | WS_VISIBLE
+        CONTROL "ID3 Tag",             GB_IDTAG, 186, 34, 105, 88, WC_STATIC,
+                                            SS_GROUPBOX | WS_GROUP | WS_VISIBLE
+        CONTROL "Write ID3 v1 tag",    RB_WRITEIDV1TAG, 191, 108, -1, -1,
+                                            WC_BUTTON, BS_AUTORADIOBUTTON |
+                                            BS_AUTOSIZE | WS_TABSTOP |
+                                            WS_VISIBLE
+        CONTROL "Write ID3 v1.1 tag",  RB_WRITEIDV11TAG, 191, 101, -1, -1,
+                                            WC_BUTTON, BS_AUTORADIOBUTTON |
+                                            BS_AUTOSIZE | WS_TABSTOP |
+                                            WS_VISIBLE
+        CONTROL "No ID3 tag",          RB_NOIDTAG, 191, 94, -1, -1, WC_BUTTON,
+                                            BS_AUTORADIOBUTTON | BS_AUTOSIZE |
+                                            WS_TABSTOP | WS_VISIBLE
+        CONTROL "Title:",              ST_TITLE, 191, 84, -1, -1, WC_STATIC,
+                                            SS_TEXT | SS_AUTOSIZE | DT_LEFT |
+                                            DT_TOP | WS_VISIBLE
+        CONTROL "ID3 title",           EF_ID3TITLE, 221, 84, 57, 6,
+                                            WC_ENTRYFIELD, ES_MARGIN | ES_ANY |
+                                            WS_TABSTOP | WS_VISIBLE
+                CTLDATA 8, 32, 0, 0
+        CONTROL "Artist:",             ST_ARTIST, 192, 76, -1, -1, WC_STATIC,
+                                            SS_TEXT | SS_AUTOSIZE | DT_LEFT |
+                                            DT_TOP | WS_VISIBLE
+        CONTROL "ID3 artist",          EF_ID3ARTIST, 221, 76, 60, 6,
+                                            WC_ENTRYFIELD, ES_MARGIN | ES_ANY |
+                                            WS_TABSTOP | WS_VISIBLE
+                CTLDATA 8, 32, 0, 0
+        CONTROL "Album:",              ST_ALBUM, 192, 68, -1, -1, WC_STATIC,
+                                            SS_TEXT | SS_AUTOSIZE | DT_LEFT |
+                                            DT_TOP | WS_VISIBLE
+        CONTROL "ID3 album",           EF_ID3ALBUM, 221, 67, 58, 6,
+                                            WC_ENTRYFIELD, ES_MARGIN | ES_ANY |
+                                            WS_TABSTOP | WS_VISIBLE
+                CTLDATA 8, 32, 0, 0
+        CONTROL "Year:",               ST_YEAR, 192, 61, -1, -1, WC_STATIC,
+                                            SS_TEXT | SS_AUTOSIZE | DT_LEFT |
+                                            DT_TOP | WS_VISIBLE
+        CONTROL "ID3 year",            EF_ID3YEAR, 222, 60, 57, 6,
+                                            WC_ENTRYFIELD, ES_MARGIN | ES_ANY |
+                                            WS_TABSTOP | WS_VISIBLE
+                CTLDATA 8, 32, 0, 0
+        CONTROL "Comment:",            ST_COMMENT, 192, 54, -1, -1, WC_STATIC,
+                                            SS_TEXT | SS_AUTOSIZE | DT_LEFT |
+                                            DT_TOP | WS_VISIBLE
+        CONTROL "ID3 comment",         EF_ID3COMMENT, 220, 53, 62, 6,
+                                            WC_ENTRYFIELD, ES_MARGIN | ES_ANY |
+                                            WS_TABSTOP | WS_VISIBLE
+                CTLDATA 8, 32, 0, 0
+        CONTROL "Track:",              ST_TRACK, 192, 46, -1, -1, WC_STATIC,
+                                            SS_TEXT | SS_AUTOSIZE | DT_LEFT |
+                                            DT_TOP | WS_VISIBLE
+        CONTROL "ID3 Track",           EF_ID3TRACK, 219, 45, 63, 6,
+                                            WC_ENTRYFIELD, ES_MARGIN | ES_ANY |
+                                            WS_TABSTOP | WS_VISIBLE
+                CTLDATA 8, 32, 0, 0
+        CONTROL "Genre:",              ST_GENRE, 192, 37, -1, -1, WC_STATIC,
+                                            SS_TEXT | SS_AUTOSIZE | DT_LEFT |
+                                            DT_TOP | WS_VISIBLE
+        CONTROL "ID3 genre",           CX_ID3GENRE, 217, 10, 70, 32,
+                                            WC_COMBOBOX, CBS_DROPDOWNLIST |
+                                            ES_ANY | WS_VISIBLE
+        CONTROL "~Encode!",            PB_ENCODE, 188, 6, 30, 10, WC_BUTTON,
+                                            BS_PUSHBUTTON | BS_DEFAULT |
+                                            WS_GROUP | WS_TABSTOP | WS_VISIBLE
+        CONTROL "~Cancel",             PB_CANCEL, 258, 5, 30, 10, WC_BUTTON,
+                                            BS_PUSHBUTTON | WS_TABSTOP |
+                                            WS_VISIBLE
+        CONTROL "Using LAME version X.XX", ST_USINGLAMEVERSION, 188, 28, 100, 6,
+                                            WC_STATIC, SS_TEXT | DT_LEFT |
+                                            DT_TOP | WS_GROUP | WS_VISIBLE
+                PRESPARAMS PP_FOREGROUNDCOLORINDEX, CLR_BLUE
+        CONTROL "LAME URL",            ST_LAMEURL, 188, 20, 98, 6, WC_STATIC,
+                                            SS_TEXT | DT_LEFT | DT_TOP |
+                                            WS_VISIBLE
+                PRESPARAMS PP_FOREGROUNDCOLORINDEX, CLR_DARKBLUE
+    END
+END

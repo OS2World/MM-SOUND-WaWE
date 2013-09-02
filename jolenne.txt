@@ -1,0 +1,62 @@
+Pluginok:
+- Formatum olvaso (WAV, RAW PCM, MP3, OGG...)
+- Formatum iro (u.a.)
+- Megjelenito/Editor
+  - Waveform, Amplitudo stb...
+- Megjelenito/View
+  - Spectrum, Fourier, Histogram, akarmi...
+- Audio processor
+  - Hangero valtoztato, zajszuro, copy, paste, cut...
+  - Frekvencia, bitrata es egyeb valtoztato
+  - Mixer, cross-fader
+  - Waveform generator
+
+Kellenet tipusok/strukturak, amik leirjak a dolgokat:
+
+Sample = 32 bits, signed. 
+
+Chunk = Samplek tomkelege. Ez rejti el hogy filebol, memoriabol, vagy mibol
+        erjuk el a cuccot.
+        Jellemzoi: Virtualis pozicio: tol, ig
+                   kezelo plugin, hozza tartozo handlek, hozza tartozo 
+                   pozicio (tol, ig)
+
+Channel = Chunkokbol all. Alapbol 1 chunk az egesz, de ha pl. beszurnak vegy 
+          torolnek belole, akkor rogton tobb lesz. Ha valtozik egy resze, az is 
+          uj chunk lesz. Minden olvasas meg iras igy a belso leiro alapjan 
+          tortenik, igy a chunkokat tudjuk kezelni.
+
+          Kivulrol nezve amugy samplek tomkelege. Mindig 32bits, signed, de van
+          olyan jellemzoje, hogy original format. (pl 8 bits, unsigned) Ez 
+          segit akkor, ha valaki le akarja menteni original format-ba.
+          Van meg neki olyanja, hogy nev.
+          Meg van meg neki olyanja hogy Frequency.
+          Meg olyan hogy length.
+
+          Hozzatartozik meg olyan leiro, hogy current position, meg
+          hogy list of selected regions.
+
+Channel-set = Channelek osszessege, altalaban egyutt kellene lejatszani.
+              Jellemzoje az original format, es a frequency. Van meg neki neve,
+              meg fileneve (ha van).
+
+
+
+A process pluginekhez kell valahogy leirni hogy ki/mi van kijelolve.
+
+Selection / General editor status
+ List of channel-sets:
+   Pointer to Channel-set descriptors
+ List of channels:
+   Pointer to Channel descriptor
+ Current channel (Pointer to one entry of list of channels)
+
+
+Ablak felepitese:
+Fejlec,
+Menu
+Toolbar
+Kliens ablak, benne Channel-Set-ek
+?Info field (Current set, channel, position...)
+
+

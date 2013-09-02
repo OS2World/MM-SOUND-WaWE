@@ -1,0 +1,22 @@
+
+Used/Reserved Dialog IDs in WaWE:
+
+1 :
+The main window of WaWE itself.
+
+3000..3999:
+Reserved for usage in WaWE windows, like in main window,
+extended file open dialog, etc...
+
+5000..5999:
+Dialog IDs of Channel-Set windows and their children
+
+6000..6999:
+Entries of Popup menu of WaWE
+
+8000..8999:
+Entries in About menu of WaWE
+
+9000..9999:
+Entries in Configure menu of WaWE
+

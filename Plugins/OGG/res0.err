@@ -1,0 +1,3 @@
+libvorbis-1.0.1\lib\res0.c(372): Warning! W202: Symbol 'ci' has been defined, but not referenced
+libvorbis-1.0.1\lib\res0.c(499): Warning! W202: Symbol 'vd' has been defined, but not referenced
+libvorbis-1.0.1\lib\os.h(144): Warning! W202: Symbol 'vorbis_ftoi' has been defined, but not referenced

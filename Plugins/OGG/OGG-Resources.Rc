@@ -1,0 +1,114 @@
+
+/* OS/2 Warp 4.0 Resource Script File - Created by Universal Resource Editor */
+
+#define INCL_WINSYS
+#define INCL_WINBIDI
+#define INCL_WINSTDDLGS
+#define INCL_WINSTDSPIN
+#define INCL_NLS
+#define INCL_SW
+
+#include <os2.h>
+
+#include "ogg-resources.h"
+
+DLGTEMPLATE DLG_OGGFORMATSETTINGS MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG "OGG format settings", DLG_OGGFORMATSETTINGS, 48, 22, 119, 114,
+                FS_NOBYTEALIGN | FS_SIZEBORDER | WS_CLIPSIBLINGS | WS_SAVEBITS,
+                FCF_TITLEBAR | FCF_SYSMENU | FCF_CLOSEBUTTON | FCF_AUTOICON |
+                FCF_TASKLIST
+    PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+    PRESPARAMS PP_USER, "12.System Proportional"
+    BEGIN
+        CONTROL "General OGG format settings", GB_GENERALOGGFORMATSETTINGS,
+                                        3, 71, 113, 38, WC_STATIC, SS_GROUPBOX |
+                                            WS_GROUP | WS_VISIBLE
+        CONTROL "Bitrate Upper",       ST_BITRATEUPPER, 8, 94, -1, -1,
+                                            WC_STATIC, SS_TEXT | SS_AUTOSIZE |
+                                            DT_LEFT | DT_TOP | WS_VISIBLE
+        CONTROL "0",                   EF_BITRATEUPPER, 65, 94, 41, 6,
+                                            WC_ENTRYFIELD, ES_AUTOSCROLL |
+                                            ES_RIGHT | ES_MARGIN | ES_ANY |
+                                            WS_TABSTOP | WS_VISIBLE
+                CTLDATA 8, 32, 0, 0
+        CONTROL "Bitrate Nominal",     ST_BITRATENOMINAL, 8, 85, -1, -1,
+                                            WC_STATIC, SS_TEXT | SS_AUTOSIZE |
+                                            DT_LEFT | DT_TOP | WS_VISIBLE
+        CONTROL "128000",              EF_BITRATENOMINAL, 65, 85, 41, 6,
+                                            WC_ENTRYFIELD, ES_AUTOSCROLL |
+                                            ES_RIGHT | ES_MARGIN | ES_ANY |
+                                            WS_TABSTOP | WS_VISIBLE
+                CTLDATA 8, 32, 0, 0
+        CONTROL "Bitrate Lower",       ST_BITRATELOWER, 8, 76, -1, -1,
+                                            WC_STATIC, SS_TEXT | SS_AUTOSIZE |
+                                            DT_LEFT | DT_TOP | WS_VISIBLE
+        CONTROL "0",                   EF_BITRATELOWER, 65, 76, 41, 6,
+                                            WC_ENTRYFIELD, ES_AUTOSCROLL |
+                                            ES_RIGHT | ES_MARGIN | ES_ANY |
+                                            WS_TABSTOP | WS_VISIBLE
+                CTLDATA 8, 32, 0, 0
+        CONTROL "OGG comments",        GB_OGGCOMMENTS, 3, 14, 113, 56,
+                                            WC_STATIC, SS_GROUPBOX | WS_GROUP |
+                                            WS_VISIBLE
+        CONTROL "",                    LB_COMMENTS, 6, 28, 80, 36, WC_LISTBOX,
+                                            LS_NOADJUSTPOS | LS_HORZSCROLL |
+                                            WS_VISIBLE
+        CONTROL "~Up",                 PB_MOVEUP, 90, 55, 25, 9, WC_BUTTON,
+                                            BS_PUSHBUTTON | WS_TABSTOP |
+                                            WS_VISIBLE
+        CONTROL "D~own",               PB_MOVEDOWN, 89, 27, 25, 9, WC_BUTTON,
+                                            BS_PUSHBUTTON | WS_TABSTOP |
+                                            WS_VISIBLE
+        CONTROL "~New",                PB_NEW, 5, 16, 32, 9, WC_BUTTON,
+                                            BS_PUSHBUTTON | WS_TABSTOP |
+                                            WS_VISIBLE
+        CONTROL "~Modify",             PB_MODIFY, 44, 16, 32, 9, WC_BUTTON,
+                                            BS_PUSHBUTTON | WS_TABSTOP |
+                                            WS_VISIBLE
+        CONTROL "~Delete",             PB_DELETE, 82, 16, 32, 9, WC_BUTTON,
+                                            BS_PUSHBUTTON | WS_TABSTOP |
+                                            WS_VISIBLE
+        CONTROL "~Ok",                 PB_OK, 3, 3, 32, 9, WC_BUTTON,
+                                            BS_PUSHBUTTON | BS_DEFAULT |
+                                            WS_GROUP | WS_TABSTOP | WS_VISIBLE
+        CONTROL "~Cancel",             PB_CANCEL, 83, 3, 32, 9, WC_BUTTON,
+                                            BS_PUSHBUTTON | WS_TABSTOP |
+                                            WS_VISIBLE
+    END
+END
+
+DLGTEMPLATE DLG_OGGCOMMENT MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG "OGG comment", DLG_OGGCOMMENT, 8, 30, 150, 92, FS_NOBYTEALIGN |
+                FS_SIZEBORDER | WS_CLIPSIBLINGS | WS_SAVEBITS, FCF_TITLEBAR |
+                FCF_SYSMENU | FCF_CLOSEBUTTON
+    PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+    PRESPARAMS PP_USER, "12.System Proportional"
+    BEGIN
+        CONTROL "Comment",             GB_COMMENT, 3, 15, 144, 75, WC_STATIC,
+                                            SS_GROUPBOX | WS_VISIBLE
+        CONTROL "Comment name",        ST_COMMENTNAME, 7, 75, -1, -1, WC_STATIC,
+                                            SS_TEXT | SS_AUTOSIZE | DT_LEFT |
+                                            DT_TOP | WS_VISIBLE
+        CONTROL "",                    EF_COMMENTNAME, 49, 76, 92, 6,
+                                            WC_ENTRYFIELD, ES_AUTOSCROLL |
+                                            ES_MARGIN | ES_ANY | WS_TABSTOP |
+                                            WS_VISIBLE
+                CTLDATA 8, 32, 0, 0
+        CONTROL "Comment value",       ST_COMMENTVALUE, 7, 64, -1, -1,
+                                            WC_STATIC, SS_TEXT | SS_AUTOSIZE |
+                                            DT_LEFT | DT_TOP | WS_VISIBLE
+        CONTROL "",                    MLE_COMMENTVALUE, 48, 19, 94, 54, WC_MLE,
+                                            MLS_BORDER | MLS_HSCROLL |
+                                            MLS_IGNORETAB | MLS_VSCROLL |
+                                            WS_TABSTOP | WS_VISIBLE
+                CTLDATA 32, 0, 65535, 65535, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0
+        CONTROL "~Ok",                 PB_OK, 3, 3, 32, 9, WC_BUTTON,
+                                            BS_PUSHBUTTON | BS_DEFAULT |
+                                            WS_GROUP | WS_TABSTOP | WS_VISIBLE
+        CONTROL "~Cancel",             PB_CANCEL, 113, 4, 32, 9, WC_BUTTON,
+                                            BS_PUSHBUTTON | WS_TABSTOP |
+                                            WS_VISIBLE
+    END
+END

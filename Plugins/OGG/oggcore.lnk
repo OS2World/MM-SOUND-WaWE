@@ -1,0 +1,37 @@
+system 386 LX DLL INITINSTANCE TERMINSTANCE
+DEBUG ALL
+name oggcore
+OPTION MAP=oggcore
+OPTION SYMFILE=oggcore
+OPTION DESCRIPTION 'OGG Vorbis support core for OGG Import/Export plugin for WaWE'
+OPTION ELIMINATE
+OPTION MANYAUTODATA
+OPTION OSNAME='OS/2 and eComStation'
+OPTION SHOWDEAD
+OPTION QUIET
+
+file bitwise.obj
+file framing.obj
+
+file bitrate.obj
+file envelope.obj
+file lpc.obj
+file lsp.obj
+file psy.obj
+file synthesis.obj
+file vorbisfile.obj
+file sharedbook.obj
+file codebook.obj
+file smallft.obj
+file info.obj
+file mdct.obj
+file window.obj
+file res0.obj
+file vorbisenc.obj
+file analysis.obj
+file mapping0.obj
+file floor0.obj
+file floor1.obj
+file block.obj
+file lookup.obj
+file registry.obj

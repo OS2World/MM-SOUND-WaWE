@@ -1,0 +1,67 @@
+
+/* OS/2 Warp 4.0 Resource Script File - Created by Universal Resource Editor */
+
+#define INCL_WINSYS
+#define INCL_WINBIDI
+#define INCL_WINSTDDLGS
+#define INCL_WINSTDSPIN
+#define INCL_NLS
+#define INCL_SW
+
+#include <os2.h>
+
+#include "pvolume-resources.h"
+
+DLGTEMPLATE DLG_CHANGEVOLUME MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG "Change volume", DLG_CHANGEVOLUME, 58, 49, 116, 75, FS_NOBYTEALIGN |
+                FS_SIZEBORDER | WS_CLIPSIBLINGS | WS_SAVEBITS, FCF_TITLEBAR |
+                FCF_SYSMENU | FCF_MINMAX | FCF_CLOSEBUTTON | FCF_AUTOICON |
+                FCF_TASKLIST
+    PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+    PRESPARAMS PP_USER, "10.System Proportional"
+    BEGIN
+        CONTROL "Changing volume of",  ST_CHANGEVOLUMEFOR, 32, 61, -1, -1,
+                                            WC_STATIC, SS_TEXT | SS_AUTOSIZE |
+                                            DT_LEFT | DT_TOP | WS_GROUP |
+                                            WS_VISIBLE
+                PRESPARAMS PP_FOREGROUNDCOLORINDEX, CLR_BLACK
+        CONTROL "<Name of channel or channel-set>",
+                                       ST_NAMEOFCHANNELORCHANNELSET,
+                                        18, 52, -1, -1, WC_STATIC, SS_TEXT |
+                                            SS_AUTOSIZE | DT_CENTER | DT_TOP |
+                                            WS_VISIBLE
+        CONTROL "~Maximize volume",    CB_MAXIMIZEVOLUME, 15, 40, -1, -1,
+                                            WC_BUTTON, BS_AUTOCHECKBOX |
+                                            BS_AUTOSIZE | WS_GROUP | WS_TABSTOP |
+                                            WS_VISIBLE
+                CTLDATA 6, 1, 0
+        CONTROL "",                    SLD_CHANGEAMOUNT, 8, 27, 99, 11,
+                                            WC_SLIDER, SLS_HORIZONTAL |
+                                            SLS_CENTER | SLS_BUTTONSLEFT |
+                                            SLS_HOMELEFT | SLS_RIBBONSTRIP |
+                                            SLS_PRIMARYSCALE1 | WS_GROUP |
+                                            WS_TABSTOP | WS_VISIBLE
+                CTLDATA 12, 0, 21, 0, 10, 0
+        CONTROL "Set volume to",       ST_SETVOLUMETO, 14, 19, -1, -1,
+                                            WC_STATIC, SS_TEXT | SS_AUTOSIZE |
+                                            DT_LEFT | DT_TOP | WS_VISIBLE
+                PRESPARAMS PP_FOREGROUNDCOLORINDEX, CLR_BLACK
+        CONTROL "9999",                EF_AMOUNT, 55, 18, -1, -1, WC_ENTRYFIELD,
+                                            ES_AUTOSCROLL | ES_RIGHT |
+                                            ES_MARGIN | ES_ANY | ES_AUTOSIZE |
+                                            WS_TABSTOP | WS_VISIBLE
+                CTLDATA 8, 10, 0, 0
+        CONTROL "%",                   ST_PERCENTAGE, 92, 18, -1, -1, WC_STATIC,
+                                            SS_TEXT | SS_AUTOSIZE | DT_LEFT |
+                                            DT_TOP | WS_VISIBLE
+                PRESPARAMS PP_FOREGROUNDCOLORINDEX, CLR_BLACK
+        CONTROL "~Ok",                 PB_OK, 8, 7, -1, -1, WC_BUTTON,
+                                            BS_PUSHBUTTON | BS_DEFAULT |
+                                            BS_AUTOSIZE | WS_GROUP | WS_TABSTOP |
+                                            WS_VISIBLE
+        CONTROL "~Cancel",             PB_CANCEL, 84, 7, -1, -1, WC_BUTTON,
+                                            BS_PUSHBUTTON | BS_AUTOSIZE |
+                                            WS_TABSTOP | WS_VISIBLE
+    END
+END

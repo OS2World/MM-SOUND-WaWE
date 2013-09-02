@@ -1,0 +1,7 @@
+libvorbis-1.0.1\lib\floor1.c(416): Warning! W202: Symbol 'quantized' has been defined, but not referenced
+libvorbis-1.0.1\lib\floor1.c(765): Warning! W202: Symbol 'n' has been defined, but not referenced
+libvorbis-1.0.1\lib\os.h(144): Warning! W202: Symbol 'vorbis_ftoi' has been defined, but not referenced
+libvorbis-1.0.1\lib\scales.h(28): Warning! W202: Symbol 'unitnorm' has been defined, but not referenced
+libvorbis-1.0.1\lib\scales.h(40): Warning! W202: Symbol 'todB' has been defined, but not referenced
+libvorbis-1.0.1\lib\scales.h(34): Warning! W202: Symbol 'FABS' has been defined, but not referenced
+libvorbis-1.0.1\lib\floor1.c(594): Warning! W202: Symbol 'seq' has been defined, but not referenced

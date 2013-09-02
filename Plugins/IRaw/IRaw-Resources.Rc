@@ -1,0 +1,72 @@
+
+/* OS/2 Warp 4.0 Resource Script File - Created by Universal Resource Editor */
+
+#define INCL_WINSYS
+#define INCL_WINBIDI
+#define INCL_WINSTDDLGS
+#define INCL_WINSTDSPIN
+#define INCL_NLS
+#define INCL_SW
+
+#include <os2.h>
+
+#include "iraw-resources.h"
+
+DLGTEMPLATE DLG_RAWIMPORT MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG "RAW Import", DLG_RAWIMPORT, 152, 71, 153, 91, FS_NOBYTEALIGN |
+                FS_SIZEBORDER | WS_CLIPSIBLINGS | WS_SAVEBITS, FCF_TITLEBAR |
+                FCF_SYSMENU | FCF_TASKLIST
+    PRESPARAMS PP_USER, "12.System Proportional"
+    BEGIN
+        CONTROL "~Import",             PB_IMPORT, 11, 8, -1, -1, WC_BUTTON,
+                                            BS_PUSHBUTTON | BS_DEFAULT |
+                                            BS_AUTOSIZE | WS_TABSTOP |
+                                            WS_VISIBLE
+                PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        CONTROL "~Cancel",             PB_CANCEL, 107, 7, -1, -1, WC_BUTTON,
+                                            BS_PUSHBUTTON | BS_AUTOSIZE |
+                                            WS_TABSTOP | WS_VISIBLE
+                PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        CONTROL "Import settings",     GB_IMPORTSETTINGS, 5, 23, 143, 60,
+                                            WC_STATIC, SS_GROUPBOX | WS_GROUP |
+                                            WS_VISIBLE
+                PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        CONTROL "Frequency (Hz):",     ST_FREQUENCY, 11, 65, -1, -1, WC_STATIC,
+                                            SS_TEXT | SS_AUTOSIZE | DT_LEFT |
+                                            DT_TOP | WS_GROUP | WS_VISIBLE
+                PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        CONTROL "44100",               EF_FREQUENCY, 68, 67, 59, 6,
+                                            WC_ENTRYFIELD, ES_AUTOSCROLL |
+                                            ES_MARGIN | ES_ANY | WS_TABSTOP |
+                                            WS_VISIBLE
+                CTLDATA 8, 32, 0, 0
+                PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        CONTROL "Bits:",               ST_BITS, 13, 54, -1, -1, WC_STATIC,
+                                            SS_TEXT | SS_AUTOSIZE | DT_LEFT |
+                                            DT_TOP | WS_GROUP | WS_VISIBLE
+                PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        CONTROL "",                    CX_BITS, 67, 30, 64, 32, WC_COMBOBOX,
+                                            CBS_DROPDOWNLIST | ES_ANY |
+                                            WS_GROUP | WS_VISIBLE
+                PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        CONTROL "Channels:",           ST_CHANNELS, 12, 42, -1, -1, WC_STATIC,
+                                            SS_TEXT | SS_AUTOSIZE | DT_LEFT |
+                                            DT_TOP | WS_GROUP | WS_VISIBLE
+                PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        CONTROL "",                    EF_CHANNELS, 70, 43, 53, 6,
+                                            WC_ENTRYFIELD, ES_AUTOSCROLL |
+                                            ES_MARGIN | ES_ANY | WS_TABSTOP |
+                                            WS_VISIBLE
+                CTLDATA 8, 32, 0, 0
+                PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        CONTROL "Signed:",             ST_SIGNED, 13, 32, -1, -1, WC_STATIC,
+                                            SS_TEXT | SS_AUTOSIZE | DT_LEFT |
+                                            DT_TOP | WS_GROUP | WS_VISIBLE
+                PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+        CONTROL "Signed",              CX_SIGNED, 66, 17, 64, 21, WC_COMBOBOX,
+                                            CBS_DROPDOWNLIST | ES_ANY |
+                                            WS_GROUP | WS_VISIBLE
+                PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+    END
+END

@@ -1,0 +1,31 @@
+
+/* OS/2 Warp 4.0 Resource Script File - Created by Universal Resource Editor */
+
+#define INCL_WINSYS
+#define INCL_WINBIDI
+#define INCL_WINSTDDLGS
+#define INCL_WINSTDSPIN
+#define INCL_NLS
+#define INCL_SW
+
+#include <os2.h>
+
+#include "pclipbrd-resources.h"
+
+DLGTEMPLATE DLG_CLIPBOARDPLUGIN MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG "Clipboard Plugin", DLG_CLIPBOARDPLUGIN, 22, 41, 60, 33,
+                FS_NOBYTEALIGN | FS_DLGBORDER | WS_CLIPSIBLINGS | WS_SAVEBITS,
+                FCF_TITLEBAR
+    PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+    PRESPARAMS PP_USER, "12.System Proportional"
+    BEGIN
+        CONTROL "Working, please wait...", ST_WORKINGPLEASEWAIT, 2, 20, -1, -1,
+                                            WC_STATIC, SS_TEXT | SS_AUTOSIZE |
+                                            DT_LEFT | DT_TOP | WS_GROUP |
+                                            WS_VISIBLE
+        CONTROL "...",                 ST_PROGRESS, 3, 6, 53, 8, WC_STATIC,
+                                            SS_TEXT | DT_CENTER | DT_VCENTER |
+                                            WS_GROUP | WS_VISIBLE
+    END
+END

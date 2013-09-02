@@ -1,0 +1,1 @@
+libvorbis-1.0.1\lib\vorbisfile.c(1560): Warning! W202: Symbol 'fpu' has been defined, but not referenced

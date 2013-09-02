@@ -1,0 +1,6 @@
+#
+# The Non-Debug version is compiled as a PM application, as it has no need
+# for the debug console.
+#
+system os2v2_pm
+@WaWE_Common.lnk

@@ -1,0 +1,148 @@
+#                      -- Makefile to create DLL file --
+
+#-----------------------------------------------------------------------------
+# This section should be modified according to the target to build!
+#-----------------------------------------------------------------------------
+dllname=oggcore
+
+libogg_object_files=bitwise.obj framing.obj
+libvorbis_object_files=bitrate.obj envelope.obj lpc.obj lsp.obj psy.obj &
+                       synthesis.obj vorbisfile.obj sharedbook.obj codebook.obj &
+                       smallft.obj info.obj &
+                       mdct.obj window.obj res0.obj vorbisenc.obj analysis.obj &
+                       mapping0.obj floor0.obj floor1.obj block.obj lookup.obj &
+                       registry.obj
+
+object_files=$(libogg_object_files) $(libvorbis_object_files)
+
+# Create debug build or not?
+# Note, that debug printf's won't be visible inside a non-debug built WaWE!
+!ifeq %WaWETarget debug
+debug_build=defined
+!endif
+
+# Define the following if there is a resource file to be used, and also 
+# define the (rcname) to the name of RC file to be used
+#has_resource_file=defined
+#rcname=xxxxxx-Resources
+
+#-----------------------------------------------------------------------------
+# The next part is somewhat general, for creation of DLL files.
+#-----------------------------------------------------------------------------
+
+!ifdef debug_build
+debugflags = -d2 -dDEBUG_BUILD
+!else
+debugflags =
+create_packed_dll=defined
+!endif
+
+dllflags = -bd
+cflags = $(debugflags) -zq -bm -bt=OS2 -5 -fpi -sg -otexan -wx -DBUILD_DLL
+
+.before
+    @set include=$(%os2tk)\h;$(%include);.\libvorbis-1.0.1\include;.\libvorbis-1.0.1\lib;.\libogg-1.1\include;
+
+.extensions:
+.extensions: .dll .obj .c
+
+all : $(dllname).dll $(dllname).lib
+
+$(dllname).lib : $(dllname).dll
+    implib $(dllname).lib $(dllname).dll
+
+# Files of libOGG
+
+bitwise.obj: libogg-1.1\src\bitwise.c .AUTODEPEND
+	wcc386 $[* $(dllflags) $(cflags)
+
+framing.obj: libogg-1.1\src\framing.c .AUTODEPEND
+	wcc386 $[* $(dllflags) $(cflags)
+
+# Files of libVORBIS
+
+bitrate.obj: libvorbis-1.0.1\lib\bitrate.c .AUTODEPEND
+	wcc386 $[* $(dllflags) $(cflags)
+
+envelope.obj: libvorbis-1.0.1\lib\envelope.c .AUTODEPEND
+	wcc386 $[* $(dllflags) $(cflags)
+
+lpc.obj: libvorbis-1.0.1\lib\lpc.c .AUTODEPEND
+	wcc386 $[* $(dllflags) $(cflags)
+
+lsp.obj: libvorbis-1.0.1\lib\lsp.c .AUTODEPEND
+	wcc386 $[* $(dllflags) $(cflags)
+
+psy.obj: libvorbis-1.0.1\lib\psy.c .AUTODEPEND
+	wcc386 $[* $(dllflags) $(cflags)
+
+synthesis.obj: libvorbis-1.0.1\lib\synthesis.c .AUTODEPEND
+	wcc386 $[* $(dllflags) $(cflags)
+
+vorbisfile.obj: libvorbis-1.0.1\lib\vorbisfile.c .AUTODEPEND
+	wcc386 $[* $(dllflags) $(cflags)
+
+sharedbook.obj: libvorbis-1.0.1\lib\sharedbook.c .AUTODEPEND
+	wcc386 $[* $(dllflags) $(cflags)
+
+codebook.obj: libvorbis-1.0.1\lib\codebook.c .AUTODEPEND
+	wcc386 $[* $(dllflags) $(cflags)
+
+smallft.obj: libvorbis-1.0.1\lib\smallft.c .AUTODEPEND
+	wcc386 $[* $(dllflags) $(cflags)
+
+info.obj: libvorbis-1.0.1\lib\info.c .AUTODEPEND
+	wcc386 $[* $(dllflags) $(cflags)
+
+mdct.obj: libvorbis-1.0.1\lib\mdct.c .AUTODEPEND
+	wcc386 $[* $(dllflags) $(cflags)
+
+window.obj: libvorbis-1.0.1\lib\window.c .AUTODEPEND
+	wcc386 $[* $(dllflags) $(cflags)
+
+res0.obj: libvorbis-1.0.1\lib\res0.c .AUTODEPEND
+	wcc386 $[* $(dllflags) $(cflags)
+
+vorbisenc.obj: libvorbis-1.0.1\lib\vorbisenc.c .AUTODEPEND
+	wcc386 $[* $(dllflags) $(cflags)
+
+analysis.obj: libvorbis-1.0.1\lib\analysis.c .AUTODEPEND
+	wcc386 $[* $(dllflags) $(cflags)
+
+mapping0.obj: libvorbis-1.0.1\lib\mapping0.c .AUTODEPEND
+	wcc386 $[* $(dllflags) $(cflags)
+
+floor0.obj: libvorbis-1.0.1\lib\floor0.c .AUTODEPEND
+	wcc386 $[* $(dllflags) $(cflags)
+
+floor1.obj: libvorbis-1.0.1\lib\floor1.c .AUTODEPEND
+	wcc386 $[* $(dllflags) $(cflags)
+
+block.obj: libvorbis-1.0.1\lib\block.c .AUTODEPEND
+	wcc386 $[* $(dllflags) $(cflags)
+
+lookup.obj: libvorbis-1.0.1\lib\lookup.c .AUTODEPEND
+	wcc386 $[* $(dllflags) $(cflags)
+
+registry.obj: libvorbis-1.0.1\lib\registry.c .AUTODEPEND
+	wcc386 $[* $(dllflags) $(cflags)
+
+
+$(dllname).dll : $(object_files) .AUTODEPEND
+    wlink @$(dllname)
+!ifdef has_resource_file
+    rc $(rcname) $(dllname).dll
+!endif
+!ifdef create_packed_dll
+    lxlite $(dllname).dll
+!endif
+    @copy $(dllname).dll ..
+    @copy $(dllname).sym ..
+
+clean : .SYMBOLIC
+        @if exist *.dll @del *.dll
+        @if exist *.obj @del *.obj
+        @if exist *.map @del *.map
+        @if exist *.sym @del *.sym
+        @if exist *.res @del *.res
+        @if exist *.lst @del *.lst

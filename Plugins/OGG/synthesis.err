@@ -1,0 +1,1 @@
+libvorbis-1.0.1\lib\os.h(144): Warning! W202: Symbol 'vorbis_ftoi' has been defined, but not referenced

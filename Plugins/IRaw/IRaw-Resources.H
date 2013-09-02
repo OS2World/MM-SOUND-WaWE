@@ -1,0 +1,12 @@
+#define PB_IMPORT 257
+#define PB_CANCEL 258
+#define GB_IMPORTSETTINGS 259
+#define DLG_RAWIMPORT 256
+#define ST_FREQUENCY 260
+#define EF_FREQUENCY 261
+#define ST_BITS 262
+#define CX_BITS 263
+#define ST_CHANNELS 264
+#define EF_CHANNELS 265
+#define ST_SIGNED 266
+#define CX_SIGNED 267

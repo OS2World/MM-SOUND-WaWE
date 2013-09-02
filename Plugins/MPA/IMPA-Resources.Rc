@@ -1,0 +1,33 @@
+
+/* OS/2 Warp 4.0 Resource Script File - Created by Universal Resource Editor */
+
+#define INCL_WINSYS
+#define INCL_WINBIDI
+#define INCL_WINSTDDLGS
+#define INCL_WINSTDSPIN
+#define INCL_NLS
+#define INCL_SW
+
+#include <os2.h>
+
+#include "impa-resources.h"
+
+DLGTEMPLATE DLG_PARSINGFILE MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG "Parsing MPEG Audio file...", DLG_PARSINGFILE, 8, 30, 148, 50,
+                FS_NOBYTEALIGN | FS_DLGBORDER | WS_CLIPSIBLINGS | WS_SAVEBITS,
+                FCF_TITLEBAR | FCF_SYSMENU | FCF_CLOSEBUTTON
+    PRESPARAMS PP_FOREGROUNDCOLORINDEX, CLR_BLACK
+    PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+    PRESPARAMS PP_USER, "10.System Proportional"
+    BEGIN
+        CONTROL "Please wait while the MPEG Audio file is being parsed!",
+                                       ST_IMPORTINGMPEGAUDIOFILEPLEASEWAIT,
+                                        4, 36, 141, 9, WC_STATIC, SS_TEXT |
+                                            DT_CENTER | DT_VCENTER | WS_GROUP |
+                                            WS_VISIBLE
+        CONTROL "~Cancel",             PB_CANCEL, 58, 4, 30, 10, WC_BUTTON,
+                                            BS_PUSHBUTTON | BS_DEFAULT |
+                                            WS_TABSTOP | WS_VISIBLE
+    END
+END

@@ -1,0 +1,27 @@
+#
+# This contains all the linker definitions that are needed for both the
+# Debug and the Non-Debug version of WaWE.
+#
+name WaWE
+file WaWE
+file WaWEFrameRegulation
+file WaWEPlugins
+file WaWEWorker1
+file WaWEWorker2
+file WaWEChannelSets
+file WaWEScreen
+file WaWEHelpers
+file WaWEMemory
+file WaWESelection
+file WaWEPopupMenu
+file WaWEConfig
+file WaWEEvents
+OPTION MAP=WaWE
+OPTION DESCRIPTION 'The Warped Wave Editor'
+OPTION ELIMINATE
+OPTION MANYAUTODATA
+OPTION OSNAME='OS/2 and eComStation'
+OPTION SHOWDEAD
+OPTION QUIET
+LIB mmpm2.lib
+LIBPATH %os2tk%\lib

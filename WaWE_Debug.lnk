@@ -1,0 +1,8 @@
+#
+# The Debug version is compiled as a VIO application, then morphs into a
+# PM one in runtime. This makes it possible to have a console.
+#
+debug ALL
+option symfile=WaWE
+system os2v2
+@WaWE_Common.lnk

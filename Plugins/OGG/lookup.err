@@ -1,0 +1,3 @@
+libvorbis-1.0.1\lib\lookup_data.h(101): Warning! W202: Symbol 'FROMdB_LOOKUP' has been defined, but not referenced
+libvorbis-1.0.1\lib\lookup_data.h(113): Warning! W202: Symbol 'FROMdB2_LOOKUP' has been defined, but not referenced
+libvorbis-1.0.1\lib\os.h(144): Warning! W202: Symbol 'vorbis_ftoi' has been defined, but not referenced

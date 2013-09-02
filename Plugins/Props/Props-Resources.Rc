@@ -1,0 +1,295 @@
+
+/* OS/2 Warp 4.0 Resource Script File - Created by Universal Resource Editor */
+
+#define INCL_WINSYS
+#define INCL_WINBIDI
+#define INCL_WINSTDDLGS
+#define INCL_WINSTDSPIN
+#define INCL_NLS
+#define INCL_SW
+
+#include <os2.h>
+
+#include "props-resources.h"
+
+DLGTEMPLATE DLG_CHANNELSETPROPERTIES MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG "Channel-Set Properties", DLG_CHANNELSETPROPERTIES, 8, 30, 196, 117,
+                FS_NOBYTEALIGN | FS_SIZEBORDER | WS_CLIPSIBLINGS | WS_SAVEBITS,
+                FCF_TITLEBAR | FCF_SYSMENU | FCF_CLOSEBUTTON | FCF_TASKLIST
+    PRESPARAMS PP_FOREGROUNDCOLORINDEX, CLR_BLACK
+    PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+    PRESPARAMS PP_USER, "10.System Proportional"
+    BEGIN
+        CONTROL "",                    NBK_PROPERTIES, 5, 16, 188, 95,
+                                            WC_NOTEBOOK, BKS_BACKPAGESTR |
+                                            BKS_MAJORTABTOP | BKS_TABBEDDIALOG |
+                                            WS_TABSTOP | WS_VISIBLE
+        CONTROL "~Help",               PB_HELP, 129, 4, 30, 10, WC_BUTTON,
+                                            BS_PUSHBUTTON | WS_TABSTOP |
+                                            WS_VISIBLE
+    END
+END
+
+DLGTEMPLATE NBP_GENERAL MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG "General", NBP_GENERAL, 8, 30, 179, 103, FS_NOBYTEALIGN | NOT
+                FS_DLGBORDER | WS_CLIPSIBLINGS | WS_SAVEBITS
+    PRESPARAMS PP_FOREGROUNDCOLORINDEX, CLR_BLACK
+    PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+    PRESPARAMS PP_USER, "10.System Proportional"
+    BEGIN
+        CONTROL "Name:",               ST_CHSETNAME, 15, 86, -1, -1, WC_STATIC,
+                                            SS_TEXT | SS_AUTOSIZE | DT_LEFT |
+                                            DT_TOP | WS_GROUP | WS_VISIBLE
+        CONTROL "",                    EF_CHSETNAME, 10, 77, 159, 8,
+                                            WC_ENTRYFIELD, ES_AUTOSCROLL |
+                                            ES_MARGIN | ES_ANY | WS_TABSTOP |
+                                            WS_VISIBLE
+                CTLDATA 8, 32, 0, 0
+        CONTROL "Filename:",           ST_CHSETFILENAME, 11, 63, -1, -1,
+                                            WC_STATIC, SS_TEXT | SS_AUTOSIZE |
+                                            DT_LEFT | DT_TOP | WS_GROUP |
+                                            WS_VISIBLE
+        CONTROL "",                    EF_CHSETFILENAME, 10, 54, 159, 8,
+                                            WC_ENTRYFIELD, ES_AUTOSCROLL |
+                                            ES_MARGIN | ES_ANY | WS_TABSTOP |
+                                            WS_VISIBLE
+                CTLDATA 8, 32, 0, 0
+        CONTROL "Length:",             ST_CHSETLENGTH, 10, 44, -1, -1,
+                                            WC_STATIC, SS_TEXT | SS_AUTOSIZE |
+                                            DT_LEFT | DT_TOP | WS_GROUP |
+                                            WS_VISIBLE
+        CONTROL "length in msec",      ST_CHSETLENGTHINMSEC, 38, 43, 57, 8,
+                                            WC_STATIC, SS_TEXT | DT_LEFT |
+                                            DT_TOP | WS_GROUP | WS_VISIBLE
+        CONTROL "length in time",      ST_CHSETLENGTHINTIME, 38, 35, 55, 8,
+                                            WC_STATIC, SS_TEXT | DT_LEFT |
+                                            DT_TOP | WS_GROUP | WS_VISIBLE
+        CONTROL "length in samples",   ST_CHSETLENGTHINSAMPLES, 38, 27, 55, 8,
+                                            WC_STATIC, SS_TEXT | DT_LEFT |
+                                            DT_TOP | WS_GROUP | WS_VISIBLE
+    END
+END
+
+DLGTEMPLATE NBP_FORMATCOMMON MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG "Format (Common)", NBP_FORMATCOMMON, 6, 28, 200, 100, FS_NOBYTEALIGN |
+                NOT FS_DLGBORDER | WS_CLIPSIBLINGS | WS_SAVEBITS
+    PRESPARAMS PP_FOREGROUNDCOLORINDEX, CLR_BLACK
+    PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+    PRESPARAMS PP_USER, "10.System Proportional"
+    BEGIN
+        CONTROL "Number of channels:", ST_NUMBEROFCHANNELS, 13, 88, -1, -1,
+                                            WC_STATIC, SS_TEXT | SS_AUTOSIZE |
+                                            DT_LEFT | DT_TOP | WS_VISIBLE
+        CONTROL "ShowNumOfChannels",   ST_SHOWNUMOFCHANNELS, 65, 89, -1, -1,
+                                            WC_STATIC, SS_TEXT | SS_AUTOSIZE |
+                                            DT_LEFT | DT_TOP | WS_VISIBLE
+                PRESPARAMS PP_FONTNAMESIZE, "9.WarpSans Bold"
+        CONTROL "Sample rate:",        ST_SAMPLERATE, 14, 78, -1, -1, WC_STATIC,
+                                            SS_TEXT | SS_AUTOSIZE | DT_LEFT |
+                                            DT_TOP | WS_GROUP | WS_VISIBLE
+        CONTROL "Samplerate Hz",       ST_SAMPLERATEHZ, 65, 78, -1, -1,
+                                            WC_STATIC, SS_TEXT | SS_AUTOSIZE |
+                                            DT_LEFT | DT_TOP | WS_VISIBLE
+                PRESPARAMS PP_FONTNAMESIZE, "9.WarpSans Bold"
+        CONTROL "~Change",             PB_SAMPLERATECHANGE, 166, 77, 30, 10,
+                                            WC_BUTTON, BS_PUSHBUTTON |
+                                            WS_TABSTOP | WS_VISIBLE
+        CONTROL "Bits per sample:",    ST_BITSPERSAMPLE, 13, 62, -1, -1,
+                                            WC_STATIC, SS_TEXT | SS_AUTOSIZE |
+                                            DT_LEFT | DT_TOP | WS_GROUP |
+                                            WS_VISIBLE
+        CONTROL "",                    EF_BITSPERSAMPLE, 56, 61, 25, 8,
+                                            WC_ENTRYFIELD, ES_AUTOSCROLL |
+                                            ES_MARGIN | ES_ANY | WS_TABSTOP |
+                                            WS_VISIBLE
+                CTLDATA 8, 32, 0, 0
+        CONTROL "Signed samples:",     ST_SIGNEDSAMPLES, 99, 63, -1, -1,
+                                            WC_STATIC, SS_TEXT | SS_AUTOSIZE |
+                                            DT_LEFT | DT_TOP | WS_GROUP |
+                                            WS_VISIBLE
+        CONTROL "",                    CX_SIGNEDUNSIGNED, 141, 49, 50, 22,
+                                            WC_COMBOBOX, CBS_DROPDOWNLIST |
+                                            ES_ANY | WS_VISIBLE
+        CONTROL "Note:\012Audio samples in WaWE are always stored in 32 bits, signed format internally. These settings affect only the format in which the channel-set will be exported.",
+                                       ST_NOTE, 11, 7, 181, 48, WC_STATIC,
+                                            SS_TEXT | DT_LEFT | DT_TOP |
+                                            DT_WORDBREAK | WS_GROUP |
+                                            WS_VISIBLE
+                PRESPARAMS PP_FOREGROUNDCOLORINDEX, CLR_DARKBLUE
+    END
+END
+
+DLGTEMPLATE NBP_FORMATSPECIFIC MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG "Format (Specific)", NBP_FORMATSPECIFIC, 8, 30, 200, 100,
+                FS_NOBYTEALIGN | NOT FS_DLGBORDER | WS_CLIPSIBLINGS |
+                WS_SAVEBITS
+    PRESPARAMS PP_FOREGROUNDCOLORINDEX, CLR_BLACK
+    PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+    PRESPARAMS PP_USER, "10.System Proportional"
+    BEGIN
+        CONTROL "",                    LB_FORMATSPECSTRINGS, 8, 7, 124, 87,
+                                            WC_LISTBOX, LS_NOADJUSTPOS |
+                                            WS_VISIBLE
+        CONTROL "Move u~p",            PB_MOVEUP, 136, 85, 40, 10, WC_BUTTON,
+                                            BS_PUSHBUTTON | WS_TABSTOP |
+                                            WS_VISIBLE
+        CONTROL "Move d~own",          PB_MOVEDOWN, 138, 8, 40, 10, WC_BUTTON,
+                                            BS_PUSHBUTTON | WS_TABSTOP |
+                                            WS_VISIBLE
+        CONTROL "~Add new...",         PB_ADDNEW, 139, 61, 50, 10, WC_BUTTON,
+                                            BS_PUSHBUTTON | WS_TABSTOP |
+                                            WS_VISIBLE
+        CONTROL "~Modify selected",    PB_MODIFYSELECTED, 139, 49, 50, 10,
+                                            WC_BUTTON, BS_PUSHBUTTON |
+                                            WS_TABSTOP | WS_VISIBLE
+        CONTROL "D~elete selected",    PB_DELETESELECTED, 139, 38, 50, 10,
+                                            WC_BUTTON, BS_PUSHBUTTON |
+                                            WS_TABSTOP | WS_VISIBLE
+    END
+END
+
+DLGTEMPLATE NBP_CHANNELS MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG "Channels", NBP_CHANNELS, 8, 30, 200, 100, FS_NOBYTEALIGN | NOT
+                FS_DLGBORDER | WS_CLIPSIBLINGS | WS_SAVEBITS
+    PRESPARAMS PP_FOREGROUNDCOLORINDEX, CLR_BLACK
+    PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+    PRESPARAMS PP_USER, "10.System Proportional"
+    BEGIN
+        CONTROL "Channel:",            ST_CHANNEL, 11, 84, -1, -1, WC_STATIC,
+                                            SS_TEXT | SS_AUTOSIZE | DT_LEFT |
+                                            DT_TOP | WS_GROUP | WS_VISIBLE
+        CONTROL "",                    CX_LISTOFCHANNELS, 43, 33, 151, 57,
+                                            WC_COMBOBOX, CBS_DROPDOWNLIST |
+                                            ES_ANY | LS_HORZSCROLL | WS_GROUP |
+                                            WS_VISIBLE
+        CONTROL "Properties of selected channel",
+                                       GB_PROPERTIESOFSELECTEDCHANNEL,
+                                        7, 5, 188, 71, WC_STATIC, SS_GROUPBOX |
+                                            WS_GROUP | WS_VISIBLE
+        CONTROL "Name:",               ST_CHNAME, 17, 60, -1, -1, WC_STATIC,
+                                            SS_TEXT | SS_AUTOSIZE | DT_LEFT |
+                                            DT_TOP | WS_GROUP | WS_VISIBLE
+        CONTROL "ChannelName",         EF_CHANNELNAME, 40, 60, 148, 6,
+                                            WC_ENTRYFIELD, ES_AUTOSCROLL |
+                                            ES_MARGIN | ES_ANY | WS_TABSTOP |
+                                            WS_VISIBLE
+                CTLDATA 8, 32, 0, 0
+        CONTROL "Length:",             ST_CHLENGTH, 16, 46, -1, -1, WC_STATIC,
+                                            SS_TEXT | SS_AUTOSIZE | DT_LEFT |
+                                            DT_TOP | WS_GROUP | WS_VISIBLE
+        CONTROL "length in msec",      ST_CHLENGTHINMSEC, 38, 43, 57, 8,
+                                            WC_STATIC, SS_TEXT | DT_LEFT |
+                                            DT_TOP | WS_GROUP | WS_VISIBLE
+        CONTROL "length in time",      ST_CHLENGTHINTIME, 38, 35, 55, 8,
+                                            WC_STATIC, SS_TEXT | DT_LEFT |
+                                            DT_TOP | WS_GROUP | WS_VISIBLE
+        CONTROL "length in samples",   ST_CHLENGTHINSAMPLES, 38, 27, 55, 8,
+                                            WC_STATIC, SS_TEXT | DT_LEFT |
+                                            DT_TOP | WS_GROUP | WS_VISIBLE
+        CONTROL "Position:",           ST_POSITION, 13, 16, -1, -1, WC_STATIC,
+                                            SS_TEXT | SS_AUTOSIZE | DT_LEFT |
+                                            DT_TOP | WS_GROUP | WS_VISIBLE
+        CONTROL "ChannelPosition",     ST_CHANNELPOSITION, 39, 16, 109, 6,
+                                            WC_STATIC, SS_TEXT | DT_LEFT |
+                                            DT_TOP | WS_GROUP | WS_VISIBLE
+        CONTROL "Move u~p",            PB_CHMOVEUP, 152, 17, 40, 10, WC_BUTTON,
+                                            BS_PUSHBUTTON | WS_TABSTOP |
+                                            WS_VISIBLE
+        CONTROL "Move d~own",          PB_CHMOVEDOWN, 152, 7, 40, 10, WC_BUTTON,
+                                            BS_PUSHBUTTON | WS_TABSTOP |
+                                            WS_VISIBLE
+    END
+END
+
+DLGTEMPLATE DLG_CHANGESAMPLERATE MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG "Change samplerate", DLG_CHANGESAMPLERATE, 30, 34, 121, 55,
+                FS_NOBYTEALIGN | FS_SIZEBORDER | WS_CLIPSIBLINGS | WS_SAVEBITS,
+                FCF_TITLEBAR | FCF_SYSMENU | FCF_CLOSEBUTTON
+    PRESPARAMS PP_FOREGROUNDCOLORINDEX, CLR_BLACK
+    PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+    PRESPARAMS PP_USER, "10.System Proportional"
+    BEGIN
+        CONTROL "Original samplerate:", ST_ORIGINALSAMPLERATE, 8, 45, -1, -1,
+                                            WC_STATIC, SS_TEXT | SS_AUTOSIZE |
+                                            DT_LEFT | DT_TOP | WS_GROUP |
+                                            WS_VISIBLE
+        CONTROL "ShownOriginalSamplerate", ST_SHOWNORIGINALSAMPLERATE,
+                                        54, 44, 72, 7, WC_STATIC, SS_TEXT |
+                                            DT_LEFT | DT_TOP | WS_GROUP |
+                                            WS_VISIBLE
+                PRESPARAMS PP_FONTNAMESIZE, "9.WarpSans Bold"
+        CONTROL "Ch~ange it to",       PB_CHANGESAMPLERATE, 11, 30, 40, 10,
+                                            WC_BUTTON, BS_PUSHBUTTON |
+                                            WS_TABSTOP | WS_VISIBLE
+        CONTROL "C~onvert it to",      PB_CONVERTSAMPLERATETO, 69, 30, 40, 10,
+                                            WC_BUTTON, BS_PUSHBUTTON |
+                                            WS_TABSTOP | WS_VISIBLE
+        CONTROL "New samplerate:",     ST_NEWSAMPLERATE, 7, 19, -1, -1,
+                                            WC_STATIC, SS_TEXT | SS_AUTOSIZE |
+                                            DT_LEFT | DT_TOP | WS_GROUP |
+                                            WS_VISIBLE
+        CONTROL "~Cancel",             PB_CANCELCHANGESAMPLERATE, 53, 5, 32, 10,
+                                            WC_BUTTON, BS_PUSHBUTTON |
+                                            WS_TABSTOP | WS_VISIBLE
+        CONTROL "Hz",                  ST_CHANGESAMPLERATEHZ, 101, 19, -1, -1,
+                                            WC_STATIC, SS_TEXT | SS_AUTOSIZE |
+                                            DT_LEFT | DT_TOP | WS_GROUP |
+                                            WS_VISIBLE
+        CONTROL "New Samplerate",      CX_NEWSAMPLERATE, 49, 4, 49, 21,
+                                            WC_COMBOBOX, CBS_DROPDOWN | ES_ANY |
+                                            WS_GROUP | WS_VISIBLE
+    END
+END
+
+DLGTEMPLATE DLG_CONVERTINGSAMPLERATE MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG "Converting samplerate of channel-set...", DLG_CONVERTINGSAMPLERATE, 78, 76, 149, 46,
+                FS_NOBYTEALIGN | FS_DLGBORDER | WS_CLIPSIBLINGS | WS_SAVEBITS,
+                FCF_TITLEBAR
+    PRESPARAMS PP_USER, "10.System Proportional"
+    BEGIN
+        CONTROL "~Cancel",             PB_CANCELSAMPLERATECONVERSION,
+                                        59, 5, 32, 10, WC_BUTTON, BS_PUSHBUTTON |
+                                            BS_DEFAULT | WS_TABSTOP |
+                                            WS_VISIBLE
+                PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+    END
+END
+
+DLGTEMPLATE DLG_NEWFORMATSPECIFICSTRING MOVEABLE DISCARDABLE
+BEGIN
+    DIALOG "New format-specific string", DLG_NEWFORMATSPECIFICSTRING, 8, 38, 124, 49,
+                FS_NOBYTEALIGN | FS_SIZEBORDER | WS_CLIPSIBLINGS | WS_SAVEBITS,
+                FCF_TITLEBAR | FCF_SYSMENU | FCF_CLOSEBUTTON
+    PRESPARAMS PP_FOREGROUNDCOLORINDEX, CLR_BLACK
+    PRESPARAMS PP_FONTNAMESIZE, "8.Helv"
+    PRESPARAMS PP_USER, "10.System Proportional"
+    BEGIN
+        CONTROL "Key name:",           ST_KEYNAME, 5, 34, -1, -1, WC_STATIC,
+                                            SS_TEXT | SS_AUTOSIZE | DT_LEFT |
+                                            DT_TOP | WS_GROUP | WS_VISIBLE
+        CONTROL "Key value:",          ST_KEYVALUE, 6, 22, -1, -1, WC_STATIC,
+                                            SS_TEXT | SS_AUTOSIZE | DT_LEFT |
+                                            DT_TOP | WS_GROUP | WS_VISIBLE
+        CONTROL "Key Name",            EF_KEYNAME, 37, 34, 74, 6, WC_ENTRYFIELD,
+                                            ES_MARGIN | ES_ANY | WS_TABSTOP |
+                                            WS_VISIBLE
+                CTLDATA 8, 32, 0, 0
+        CONTROL "Key Value",           EF_KEYVALUE, 37, 23, 73, 5,
+                                            WC_ENTRYFIELD, ES_MARGIN | ES_ANY |
+                                            WS_TABSTOP | WS_VISIBLE
+                CTLDATA 8, 32, 0, 0
+        CONTROL "C~reate",             PB_CREATE, 18, 6, 30, 10, WC_BUTTON,
+                                            BS_PUSHBUTTON | BS_DEFAULT |
+                                            WS_TABSTOP | WS_VISIBLE
+        CONTROL "~Cancel",             PB_CANCEL, 64, 6, 30, 10, WC_BUTTON,
+                                            BS_PUSHBUTTON | WS_TABSTOP |
+                                            WS_VISIBLE
+    END
+END

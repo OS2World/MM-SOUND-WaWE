@@ -1,0 +1,21 @@
+
+Most:
+
+- Minden channel-set-hez egy Worker2 thread.
+- ID3v2 suppa
+- Volume changer pluginbe Progress Indicator...
+
+- Toolbar
+- Pluginek exportalhassanak buttonokat a toolbar-ba. A felhasznalo valogathassa ossze
+  a sorrendet, koztes helyet, lathatosagot, stb., a rendelkezesre allo buttonokbol.
+  A buttonok kezeleset a pluginek vegzik!
+  Kell hozza flyover help is!
+- Amplitude editor plugin (Min-Max, Avg!)
+- Volume changer, Special, es progress ablak, ha tul sokaig megy.
+- Makefile rendszert atdolgozni, makefile.plugins menjen a Plugins konyvtarba makefile neven!
+
+Valamikor majd:
+
+- Popup menuben kell kivalasztani Viewer pluginokat es Editor plugin-t is!
+- ZoomSet-nel jo lenne ha msec-ben vagy valami idoben kiirna a MouseSet-es
+  resznel a teljes adag pozicioit, meg a kijeloles elejet/veget.
