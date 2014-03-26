@@ -1,3 +1,0 @@
-libvorbis-1.0.1\lib\os.h(144): Warning! W202: Symbol 'vorbis_ftoi' has been defined, but not referenced
-libvorbis-1.0.1\lib\scales.h(40): Warning! W202: Symbol 'todB' has been defined, but not referenced
-libvorbis-1.0.1\lib\scales.h(34): Warning! W202: Symbol 'FABS' has been defined, but not referenced

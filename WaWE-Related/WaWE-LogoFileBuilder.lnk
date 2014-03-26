@@ -1,0 +1,8 @@
+system os2v2
+file WaWE-LogoFileBuilder
+OPTION DESCRIPTION 'WaWE - Logo File Builder'
+OPTION ELIMINATE
+OPTION MANYAUTODATA
+OPTION OSNAME='OS/2 and eComStation'
+OPTION SHOWDEAD
+LIBPATH %os2tk%\lib

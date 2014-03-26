@@ -1,0 +1,78 @@
+2006.03.15: (v0.78)
+ - Added support for High Memory usage at some places to be able to handle
+   big audio files without out of memory errors.
+
+2005.04.20: (v0.77)
+ - added ~s to menu-items and added ACCELTABLE to WaWE-Resources.Rc to
+   enhance keyboard-control for the progam.
+   'm' now can be used instead of MB2 to get the context-menu of a window. (fbakan@gmx.net)
+ - Changed IMPA plugin to check file more strictly. I hope it avoids now problems like 
+   detecting WAV files as MP3 files.
+
+2004.12.08.: (v0.76)
+ - Moved all Clipboard functions under 'Edit' menu entry, and added 'Delete samples'
+   capability to Clipboard plugin,
+ - Saving a channel-set in a different format will automatically choose the correct
+   Import plugin to reopen the channel-set.
+ - Added MPEG Audio Layer III (MP3) Export plugin, using the LAME encoder.
+   It only supports ID3v1 and ID3v1.1 TAGs yet.
+ - Fixed bugs in InserSample and DeleteSample WaWEHelpers
+ - Worker thread has been splitted into two worker threads. It means that one can
+   use plugin functions while the screen is being redrawn.
+ - Added Properties plugin with the ability to change and convert samplerate and
+   modify format-specific parameters of channel-sets
+ - Implemented event callbacks
+ - Fixed a crash that was caused by concurrent read access
+ - Added native MPEG Audio (MPEG-1 and MPEG-2 Layer II, III) Import plugin.
+   This plugin uses mpglib v0.2 internally, so it doesn't support free-format MP3 files. 
+   Also, ID3 TAG support is limited to ID3v1 and ID3v1.1 only (yet).
+ - Disabled MP3 support in IMMIO plugin now that there is a better one.
+ - Fixed possible memory leak that could occur when an Import plugin says that it can
+   handle a given file, and then later it cannot open it.
+ - Last Import/Export folder is now saved in WaWE.cfg
+ - Added WAV export plugin
+ - Fixed a warning message which appeared when no comments were added to ogg format at exporting
+ - Added "Play from current position" to Playback plugin
+ - Fixed bug of not clearing the "Modified" flag of channel-set after saving it
+ - Fixed "UpdateReopenedChannelSet()" to delete extra channels after modification
+ - Fixed bug in IOGG plugin of not releasing the file handle.
+ - A lot of other small fixes and modifications
+
+2004.10.17.: (v0.74)
+ - Tuned priority of threads for better usability
+ - Fixed small memory leak when no read-cache is used
+ - Made time format configurable (Selectable between msec, hh:mm:sec.msec, or samples)
+ - About menu item moved into Help menu
+ - Scrolling left and right by pressing the "<" and ">" buttons of scrollbar now
+   scrolls one pixel, not one sample (handier when zoomed out)
+ - Parameters given to WaWE.exe will be opened automatically at startup
+ - WaWE now remembers last Import/Export folder (per-session)
+ - Fixed several bugs in read-cache, which caused crashes
+
+2004.10.12.: (v0.72)
+ - Implemented Default button for Playback plugin
+ - Added read-cache to WaWE (can be configured) to speed up the GUI
+ - Bugfixes
+
+2004.10.04.:
+ - Added logic to IMMIO plugin to get PCM filesize of files in another way,
+   if simple way (SEEK_END) does not work. (mostly for MP3 files)
+ - Added first version of Playback plugin. It only supports DART, and the
+   Help and Default buttons do not work in Config window...
+ - Fixed bug in handling Format Specific stuffs.
+
+2004.09.15.:
+ - Fixed Volume plugin
+ - Enhanced OGG Vorbis Export plugin with settings dialog
+ - Reworked Format Specific stuffs
+ - Other fixes all around the code...
+
+2004.07.16.:
+ - Added OGG Vorbis Import plugin
+ - Added OGG Vorbis Export plugin
+   (This is not in its final form, it will have a save settings dialog)
+ - Added small local cache to EWave plugin to speed up drawing
+ - Smaller bugfixes
+
+Pre-2004.07.16.:
+ - Dunno...
